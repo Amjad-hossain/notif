@@ -1,26 +1,20 @@
-package com.codehaven.listener;
+package com.codehaven.interceptor;
 
-import org.apache.tiles.Attribute;
-import org.apache.tiles.Definition;
-import org.apache.tiles.TilesContainer;
-import org.apache.tiles.access.TilesAccess;
-import org.apache.tiles.mgmt.MutableTilesContainer;
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.servlet.ServletUtil;
+import org.apache.tiles.AttributeContext;
+import org.apache.tiles.preparer.ViewPreparer;
+import org.apache.tiles.request.Request;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by coder on 1/24/16.
  */
-public class RequestInterceptor extends HandlerInterceptorAdapter {
+public class RequestInterceptor extends HandlerInterceptorAdapter implements ViewPreparer {
 
     private String orgId = "partex";
 
@@ -38,6 +32,12 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
     }
 
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
- 
+
+    }
+
+    @Override
+    public void execute(Request request, AttributeContext attributeContext) {
+        System.out.println("--------------- attribute : " + attributeContext.getTemplateAttribute());
+
     }
 }

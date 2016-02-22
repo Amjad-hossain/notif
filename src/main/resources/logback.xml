@@ -18,12 +18,15 @@
     <logger name="org.quartz">
         <level value="ERROR"/>
     </logger>
-    <logger name="org.springframework.scheduling.quartz" level="ERROR"/>
+    <logger name="org.springframework" level="ERROR"/>
 
     <logger name="org.hibernate" level="ERROR"/>
     <logger name="org.hibernate.SQL" level="ERROR"/>
     <logger name="org.hibernate.hql" level="ERROR"/>
-    <logger name="com.wordnik" level="WARN"/>
+    <logger name="com.wordnik" level="ERROR"/>
+    <logger name="o.s.s.w" level="ERROR"/>
+    <logger name="org.apache.commons" level="ERROR"/>
+    <logger name="o.a.t.d" level="ERROR"/>
 
     <root level="debug">
         <appender-ref ref="STDOUT"/>

@@ -5,33 +5,31 @@
 <tiles-definitions>
 
     <definition name="defaultTemplate" template="/WEB-INF/template/default/template.jsp">
-        <put-attribute name="header" value="/WEB-INF/template/default/header.jsp" />
-        <put-attribute name="menu" value="/WEB-INF/template/default/menu.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/template/default/footer.jsp" />
+        <put-attribute name="header" value="/WEB-INF/template/default/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/template/default/menu.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/template/default/footer.jsp"/>
     </definition>
 
-
     <definition name="login" extends="defaultTemplate">
-        <put-attribute name="header" value="" />
-        <put-attribute name="menu" value="" />
+        <put-attribute name="header" value=""/>
+        <put-attribute name="menu" value=""/>
         <put-attribute name="body" value="/WEB-INF/pages/login.jsp"/>
-        <put-attribute name="footer" value="/WEB-INF/template/default/footer.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/template/default/footer.jsp"/>
     </definition>
 
     <definition name="accessDenied" extends="defaultTemplate">
         <put-attribute name="body" value="/WEB-INF/pages/accessDenied.jsp"/>
     </definition>
 
-   <definition name="admin" extends="defaultTemplate">
+    <definition name="admin" extends="defaultTemplate">
         <put-attribute name="body" value="/WEB-INF/pages/admin.jsp"/>
     </definition>
-
 
     <definition name="user" extends="defaultTemplate">
         <put-attribute name="body" value="/WEB-INF/pages/settings/user.jsp"/>
     </definition>
 
-   <definition name="user-list" extends="defaultTemplate">
+    <definition name="user-list" extends="defaultTemplate">
         <put-attribute name="body" value="/WEB-INF/pages/settings/user-list.jsp"/>
     </definition>
 
@@ -50,6 +48,5 @@
     <definition name="org-list" extends="defaultTemplate">
         <put-attribute name="body" value="/WEB-INF/pages/settings/organization-list.jsp"/>
     </definition>
-
 
 </tiles-definitions>

@@ -12,17 +12,28 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
+<%
+    final String context = request.getContextPath();
+%>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='<%= context%>/resources/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href="<%= context%>/resources/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<%= context%>/resources/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <link href="<%= context%>/resources/css/plugins/timeline/timeline.css" rel="stylesheet">
+    <link href="<%= context%>/resources/css/sb-admin.css" rel="stylesheet">
+    <link href="<%= context%>/resources/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="<%= context%>/resources/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
 
-    <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/css/plugins/timeline/timeline.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/css/sb-admin.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 
+    <script src="<%= context%>/resources/js/jquery-1.10.2.js"></script>
+    <script src="<%= context%>/resources/js/bootstrap.min.js"></script>
+    <script src="<%= context%>/resources/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="<%= context%>/resources/js/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="<%= context%>/resources/js/plugins/morris/morris.js"></script>
+    <script src="<%= context%>/resources/js/sb-admin.js" type="text/javascript"></script>
 
 </head>
 <body>

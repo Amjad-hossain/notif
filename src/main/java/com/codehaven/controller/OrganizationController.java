@@ -12,8 +12,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.TimeZone;
 
 /**
@@ -32,9 +35,22 @@ public class OrganizationController {
     public String readOrgs(ModelMap model) {
 
         logger.debug(">>> Org list reading.");
-        List<Organization> organizations = organizationService.findAll();
-        model.addAttribute("orgList", organizations);
         return "org-list";
+    }
+
+    @RequestMapping( value = "/admin/orgs.do", method = RequestMethod.GET)
+    public @ResponseBody Map readOrgsAsJson(ModelMap model) {
+
+        logger.info(">>> readOrgsAsJson:: by ajax");
+        List<Organization> orgs = organizationService.findAll();
+        if(orgs != null && !orgs.isEmpty()) {
+            logger.info("--- readOrgsAsJson:: size[{}]", orgs.size());
+        } else {
+            logger.info("--- readOrgsAsJson:: Empty list");
+        }
+        Map<String, List> response = new HashMap<String, List>();
+        response.put("data", orgs);
+        return response;
     }
 
     @RequestMapping( value = "/admin/org.do", method = RequestMethod.GET)

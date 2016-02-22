@@ -7,6 +7,13 @@
     <version>1.0-SNAPSHOT</version>
     <name>notif</name>
 
+    <developers>
+        <developer>
+            <name>Md Amjad hossain</name>
+            <email>amjadict07@gmail.com</email>
+        </developer>
+    </developers>
+
     <properties>
         <spring.version>4.2.2.RELEASE</spring.version>
         <springsecurity.version>4.0.2.RELEASE</springsecurity.version>
@@ -38,6 +45,19 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${springsecurity.version}</version>
         </dependency>
 
         <dependency>
@@ -121,18 +141,12 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Spring Security -->
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>${springsecurity.version}</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.6.5</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${springsecurity.version}</version>
-        </dependency>
 
         <!-- Testing -->
         <dependency>

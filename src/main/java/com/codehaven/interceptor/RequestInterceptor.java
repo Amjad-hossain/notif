@@ -23,7 +23,7 @@ public class RequestInterceptor extends HandlerInterceptorAdapter implements Vie
     
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        System.out.println("RequestInterceptor: REQUEST Intercepted for URI: " + request.getRequestURI());
+//        System.out.println("RequestInterceptor: REQUEST Intercepted for URI: " + request.getRequestURI());
         request.setAttribute("special", "I Love Animals!");
 
 //        System.out.println("----------- tilesConfig:: " + tilesConfigurer.setDefinitions(""));
@@ -37,7 +37,7 @@ public class RequestInterceptor extends HandlerInterceptorAdapter implements Vie
 
     @Override
     public void execute(Request request, AttributeContext attributeContext) {
-        System.out.println("--------------- attribute : " + attributeContext.getTemplateAttribute());
+//        System.out.println("--------------- attribute : " + attributeContext.getTemplateAttribute());
 
     }
 }
